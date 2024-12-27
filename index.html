@@ -62,13 +62,30 @@ inspector.load();
     <section>
         <h2>About Us</h2>
         <p>We invest in meaningful ideas.</p>
-        <a href="https://www.google.com" target="_blank"><button>Learn More</button></a>
+        <a href="https://www.google.com" target="_blank"><button>Learn More</button>
+        </a>
+        <script>
+  function trackaboutusClick() {
+    inspector.trackSchemaFromEvent("Learn More Clicked", {
+      buttonText: "About Us",
+      destination: "https://www.google.com"
+    });
+  }
+</script>
     </section>
     
     <section>
         <h2>Who We Are</h2>
         <p>Dreamers.</p>
         <a href="mailto:awhitehead0306@gmail.com"><button>Contact Us</button></a>
+        <script>
+  function trackaboutusClick() {
+    inspector.trackSchemaFromEvent("Wwho we are clicked", {
+      buttonText: "Who We Are",
+      destination: "mailto:awhitehead0306@gmail.com"
+    });
+  }
+</script>
     </section>
 </body>
 </html>
