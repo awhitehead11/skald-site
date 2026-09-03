@@ -3,8 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scald Group</title>
-<meta name="description" content="Scald Group LLC — holdings, brands, and civic initiatives.">
+<title>Skald Group</title>
+<meta name="description" content="Skald Group LLC — holdings, brands, and civic initiatives.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<meta property="og:title" content="Skald Group">
+<meta property="og:description" content="Skald Group LLC — holdings, brands, and civic initiatives.">
+<meta property="og:image" content="assets/skald-logo-lockup.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -53,6 +58,17 @@
     background: rgba(10,10,10,0.85);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--panel-line);
+  }
+  .nav .brand{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .nav .logo-mark{
+    width: 34px;
+    height: 34px;
+    border-radius: 4px;
+    display: block;
   }
   .nav .wordmark{
     font-family: 'Space Grotesk', sans-serif;
@@ -162,18 +178,15 @@
       var(--panel);
     overflow: hidden;
   }
-  .hero-visual::after{
-    content: "SCALD";
+  .hero-visual .ship{
     position: absolute;
     inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: clamp(2.5rem, 8vw, 4rem);
-    color: rgba(226,255,38,0.12);
-    letter-spacing: 0.05em;
+    width: 68%;
+    height: 68%;
+    margin: auto;
+    object-fit: contain;
+    opacity: 0.9;
+    filter: drop-shadow(0 0 22px rgba(226,255,38,0.25));
   }
   .hero-visual .corner{
     position: absolute;
@@ -347,12 +360,25 @@
   }
   footer a{ color: var(--dim); text-decoration: none; }
   footer a:hover{ color: var(--yellow); }
+  footer .brand-line{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  footer .brand-line img{
+    width: 18px;
+    height: 18px;
+    opacity: 0.7;
+  }
 </style>
 </head>
 <body>
 
   <nav class="nav">
-    <div class="wordmark">Scald<span>Group</span></div>
+    <div class="brand">
+      <img class="logo-mark" src="assets/favicon.png" alt="">
+      <div class="wordmark">Skald<span>Group</span></div>
+    </div>
     <ul>
       <li><a href="#holdings">Holdings</a></li>
       <li><a href="#brands">Brands</a></li>
@@ -362,11 +388,11 @@
 
   <header class="hero">
     <div class="hero-copy">
-      <span class="eyebrow">Scald Group LLC</span>
-      <h1>Scald<br>Group</h1>
+      <span class="eyebrow">Skald Group LLC</span>
+      <h1>Skald<br>Group</h1>
       <p class="pitch">
         <!-- Placeholder pitch copy — replace with final language. -->
-        Scald Group is a holding company that builds and backs ventures across housing,
+        Skald Group is a holding company that builds and backs ventures across housing,
         aviation, and entertainment — and puts its resources behind the causes that
         keep our civic institutions standing.
       </p>
@@ -376,6 +402,7 @@
       </div>
     </div>
     <div class="hero-visual" aria-hidden="true">
+      <img class="ship" src="assets/longship-yellow.png" alt="">
       <span class="corner tl"></span>
       <span class="corner br"></span>
     </div>
@@ -441,8 +468,8 @@
   </main>
 
   <footer>
-    <span>&copy; 2026 Scald Group LLC</span>
-    <a href="mailto:info@scaldgroup.com">info@scaldgroup.com</a>
+    <span class="brand-line"><img src="assets/longship-white.png" alt="">&copy; 2026 Skald Group LLC</span>
+    <a href="mailto:info@skaldgroup.com">info@skaldgroup.com</a>
   </footer>
 
 </body>
