@@ -290,6 +290,7 @@
   .tool-card:hover{
     transform: none;
     box-shadow: none;
+    border-color: var(--panel-line);
   }
   .tool-title-row{
     display: flex;
@@ -310,7 +311,7 @@
     gap: 12px;
   }
   .tool-divider{ color: var(--panel-line); }
-  .tool-url{
+  .tool-desc{
     font-size: 0.8rem;
     font-weight: 300;
     letter-spacing: 0.02em;
@@ -330,6 +331,7 @@
     text-transform: uppercase;
     text-decoration: none;
     white-space: nowrap;
+    flex-shrink: 0;
     transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
   }
   .btn-visit:hover{
@@ -338,6 +340,12 @@
     color: var(--black);
   }
   .btn-visit .arrow{ font-size: 1em; }
+  .btn-visit--soon{ cursor: default; }
+  .btn-visit.btn-visit--soon:hover{
+    border-color: #e5484d;
+    background: #e5484d;
+    color: var(--white);
+  }
 
   @media (max-width: 800px){
     .hero{ grid-template-columns: 1fr; }
@@ -418,7 +426,7 @@
             <span class="tag">Tool</span>
             <div class="tool-title-row">
               <span class="tool-name">ChopWord</span>
-              <span class="tool-url-group"><span class="tool-divider">|</span><span class="tool-url">gochopword.com/about</span></span>
+              <span class="tool-url-group"><span class="tool-divider">|</span><span class="tool-desc">Track your writing session word count and other metrics for Lacuna.</span></span>
             </div>
           </div>
           <a class="btn-visit" href="https://www.gochopword.com/about" target="_blank" rel="noopener">Visit Site <span class="arrow">↗</span></a>
@@ -429,10 +437,21 @@
             <span class="tag">Tool</span>
             <div class="tool-title-row">
               <span class="tool-name">Lacuna: Learn New Words</span>
-              <span class="tool-url-group"><span class="tool-divider">|</span><span class="tool-url">lacunawords.com/about</span></span>
+              <span class="tool-url-group"><span class="tool-divider">|</span><span class="tool-desc">Log new words and use flashcards and other tools to learn them.</span></span>
             </div>
           </div>
-          <a class="btn-visit" href="https://www.lacunawords.com/about" target="_blank" rel="noopener">Visit Site <span class="arrow">↗</span></a>
+          <span class="btn-visit btn-visit--soon">Coming Soon</span>
+        </div>
+
+        <div class="card tool-card">
+          <div class="tool-info">
+            <span class="tag">Tool</span>
+            <div class="tool-title-row">
+              <span class="tool-name">Writing Kata</span>
+              <span class="tool-url-group"><span class="tool-divider">|</span><span class="tool-desc">Writing exercise tool to help you strengthen your writing skills and track your progress.</span></span>
+            </div>
+          </div>
+          <span class="btn-visit btn-visit--soon">Coming Soon</span>
         </div>
       </div>
     </section>
