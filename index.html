@@ -170,6 +170,8 @@
   .hero-visual{
     position: relative;
     aspect-ratio: 1 / 1;
+    width: min(400px, 100%);
+    margin-left: auto;
     border: 1px solid var(--panel-line);
     border-radius: 8px;
     background:
@@ -178,15 +180,25 @@
       var(--panel);
     overflow: hidden;
   }
+  .hero-visual::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 55%;
+    height: 55%;
+    margin: auto;
+    background: radial-gradient(circle, rgba(255,238,20,0.45), transparent 70%);
+    filter: blur(26px);
+  }
   .hero-visual .ship{
     position: absolute;
     inset: 0;
-    width: 68%;
-    height: 68%;
+    width: 56%;
+    height: 56%;
     margin: auto;
     object-fit: contain;
-    opacity: 0.9;
-    filter: drop-shadow(0 0 22px rgba(255,238,20,0.25));
+    opacity: 0.92;
+    filter: drop-shadow(0 0 16px rgba(255,238,20,0.4));
   }
   .hero-visual .corner{
     position: absolute;
@@ -260,20 +272,72 @@
     font-size: 0.92rem;
     margin: 10px 0 0;
   }
+  .coming-soon{ text-align: center; }
 
-  /* Brands */
-  .brand-card{
+  /* Tools */
+  .tool-rows{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    min-height: 150px;
+    gap: 14px;
   }
-  .brand-card .brand-name{
+  .tool-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .tool-card:hover{
+    transform: none;
+    box-shadow: none;
+  }
+  .tool-title-row{
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 2px;
+  }
+  .tool-name{
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: 700;
+    color: var(--white);
   }
-  .brand-card .brand-name span{ color: var(--yellow); }
+  .tool-url-group{
+    display: inline-flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .tool-divider{ color: var(--panel-line); }
+  .tool-url{
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: var(--dim);
+  }
+  .btn-visit{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
+    border: 1px solid rgba(245,245,242,0.3);
+    border-radius: 4px;
+    color: var(--white);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  }
+  .btn-visit:hover{
+    border-color: var(--yellow);
+    background: var(--yellow);
+    color: var(--black);
+  }
+  .btn-visit .arrow{ font-size: 1em; }
 
   @media (max-width: 800px){
     .hero{ grid-template-columns: 1fr; }
@@ -317,6 +381,7 @@
     <ul>
       <li><a href="#tools">Tools</a></li>
       <li><a href="#investments">Investments</a></li>
+      <li><a href="#writing">Writing</a></li>
     </ul>
   </nav>
 
@@ -347,10 +412,27 @@
         <h2>Tools</h2>
       </div>
 
-      <div class="grid">
-        <div class="card brand-card">
-          <span class="tag">Tool</span>
-          <div class="brand-name">Chop<span>Word</span></div>
+      <div class="tool-rows">
+        <div class="card tool-card">
+          <div class="tool-info">
+            <span class="tag">Tool</span>
+            <div class="tool-title-row">
+              <span class="tool-name">ChopWord</span>
+              <span class="tool-url-group"><span class="tool-divider">|</span><span class="tool-url">www.gochopword.com/about</span></span>
+            </div>
+          </div>
+          <a class="btn-visit" href="https://www.gochopword.com/about" target="_blank" rel="noopener">Visit Site <span class="arrow">↗</span></a>
+        </div>
+
+        <div class="card tool-card">
+          <div class="tool-info">
+            <span class="tag">Tool</span>
+            <div class="tool-title-row">
+              <span class="tool-name">Lacuna: Learn New Words</span>
+              <span class="tool-url-group"><span class="tool-divider">|</span><span class="tool-url">www.lakunawords.com/about</span></span>
+            </div>
+          </div>
+          <a class="btn-visit" href="https://www.lakunawords.com/about" target="_blank" rel="noopener">Visit Site <span class="arrow">↗</span></a>
         </div>
       </div>
     </section>
@@ -364,7 +446,7 @@
       <div class="grid">
         <div class="card">
           <span class="tag">Theme</span>
-          <h4>Mortgage / Homeownership</h4>
+          <h4>Home Ownership</h4>
         </div>
         <div class="card">
           <span class="tag">Theme</span>
@@ -373,6 +455,20 @@
         <div class="card">
           <span class="tag">Theme</span>
           <h4>Interactive Entertainment</h4>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="writing">
+      <div class="block-head">
+        <span class="index">03</span>
+        <h2>Writing</h2>
+      </div>
+
+      <div class="grid">
+        <div class="card coming-soon">
+          <span class="tag">Status</span>
+          <h4>Coming Soon</h4>
         </div>
       </div>
     </section>
